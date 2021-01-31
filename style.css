@@ -28,12 +28,14 @@ body {
 
 /*=== CARD ===*/
 .card {
-    width: min(90vw, 700px);
+    width: 700px;
     height: 280px;
     background: #fff;
     border-radius: 8px;
 
     display: flex;
+
+    position: relative;
 }
 
 .img img {
@@ -45,7 +47,7 @@ body {
 
 .content {
     color: var(--Dark-Grayish-Blue);
-    padding: 2rem;
+    padding: 32px;
 }
 
 .content h3 {
@@ -60,10 +62,11 @@ body {
 /*=== BOTTOM AREA ===*/
 .bottom-area {
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
-    margin-top: 1.5rem;
+    margin-top: 32px;
 }
 
 .autor-info {
@@ -114,13 +117,13 @@ body {
 
 .social-media {
     background: var(--Dark-Grayish-Blue);
-    padding: 8px 28px;
+    padding: 12px 28px;
     border-radius: 8px;
 
     display: flex;
+    margin-top: -120px;
+    margin-left: -116px;
     position: absolute;
-    margin-top: -140px;
-    right: 80px;
 
     box-shadow: 2px 6px 20px 0px rgba(0, 0, 0, 0.1);
 
@@ -132,13 +135,54 @@ body {
     margin: 8px;
 }
 
-.social-media p.icon {
+p.share-text {
     letter-spacing: 4px;
     font-weight: bold;
     color: var(--Grayish-Blue);
+    margin-right: 16px;
 }
 
 .social-media.active {
     opacity: 1;
     visibility: visible;
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: 320px;
+        height: 480px;
+
+        flex-direction: column;
+    }
+
+    .img img {
+        width: 320px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 8px 8px 0 0;
+    }
+
+    .content h3 {
+        font-size: 1rem;
+    }
+
+    .social-media {
+        border-radius: 0 0 8px 8px;
+        width: 100%;
+
+        padding: 16px 28px;
+
+        bottom: 0;
+
+        margin-left: -256px;
+    }
+
+    .share-area {
+        position: relative;
+        z-index: 99;
+    }
+
+    .share-area.active {
+        background: var(--Desaturated-Dark-Blue);
+    }
 }
